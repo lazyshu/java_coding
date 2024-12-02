@@ -120,8 +120,13 @@ public class 청소로봇 {
             int ny = y + dy[d];
             if (nx < 0 || nx >= n || ny < 0 || ny >= n || board[nx][ny] == 1) {
                 d= (d+1)%4; //이게 4넘으면 다시 1로 돌아오는 계산법이라고 함 @.@
+                continue;
             }
+            x=nx;
+            y = ny;
         }
+        answer[0] = x;
+        answer[1] = y;
         return answer;
     }
 
