@@ -56,6 +56,7 @@ public class 서로다른빈도수만들기 {
                 count++;
             }
             if (hs.get(c) == 0) {
+
                 continue; //요거 중요하당. 0이면 ch에 담으면 앙대!
             }
             ch.add(hs.get(c));
