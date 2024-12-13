@@ -16,7 +16,7 @@ public class 음수가있는부분수열 {
                 }
             }
         }
-//        System.out.println("count = " + count);
+        System.out.println("count = " + count);
         int actualAnswer = actualAnswer(input, m);
         System.out.println("actualAnswer = " + actualAnswer);
     }
@@ -28,8 +28,12 @@ public class 음수가있는부분수열 {
         hm.put(0, 1); //요건 왜 넣어주지
         for (int i : input) {
             sum += i;
+            System.out.println("i = " + i);
+            System.out.println("sum = " + sum);
             if (hm.containsKey(sum - m)) { //sum,m이 둘다 영이면! 한개 추가 되겠넴!!
+                System.out.println("hm.get(sum-m) = " + hm.get(sum-m));
                 answer += hm.get(sum - m);
+                System.out.println("answer = " + answer);
             }
             hm.put(sum, hm.getOrDefault(sum, 0) + 1); //왜 합을 잡아넣노!! 
         }

@@ -6,10 +6,16 @@ public class 회장선거 {
     public static void main(String[] args) {
         String[] votes = {"bob tom", "bob park", "park bob", "luis park", "daniel luis", "luis bob", "park luis", "tom bob", "tom luis", "john park", "park john"};
         int k=3;
+        solution(votes, k);
+
+
+    }
+
+    private static void solution(String[] votes, int k) {
         HashMap<String, List<String>> map = new HashMap<>();
 
         for (int i = 0; i < votes.length; i++) {
-            String[] vote=votes[i].split(" ");
+            String[] vote= votes[i].split(" ");
             if (map.containsKey(vote[1])) {
                 map.get(vote[1]).add(vote[0]);
             } else {
@@ -35,11 +41,6 @@ public class 회장선거 {
                 giftTo.add(string);
             }
         }
-        System.out.println(giftTo.stream().sorted().findFirst());
-
-
-
-
-
+        System.out.println(giftTo.stream().sorted().findFirst().get());
     }
 }

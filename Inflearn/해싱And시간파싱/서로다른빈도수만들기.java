@@ -4,7 +4,7 @@ import java.util.*;
 
 public class 서로다른빈도수만들기 {
     public static void main(String[] args) {
-        String input = "aaabbbcccdddeeeeeff";
+        String input = "aebbbbc";
         List<Integer> li = new ArrayList<>();
 
         char[] chArr = input.toCharArray();
@@ -21,7 +21,7 @@ public class 서로다른빈도수만들기 {
         }
         li.add(count);
         li.sort(Collections.reverseOrder());
-
+        System.out.println("li = " + li);
         int answer=0;
         int min=li.getFirst();
         for (int i = 1; i < li.size(); i++) {
