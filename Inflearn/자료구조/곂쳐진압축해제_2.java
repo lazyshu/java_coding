@@ -28,6 +28,8 @@ public class 곂쳐진압축해제_2 {
         if (input.isEmpty()) {
             return "";
         }
+
+        //이부분 아마 () 이거 뺴주고 한번 더 돌려야 하나?
         if (input.charAt(0) == '(') {
             return input.substring(1, input.length() - 1);
         }
