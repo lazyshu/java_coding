@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.TreeMap;
 
-public class 이진수정렬 {
+public class 이진수정렬_1 {
     public static void main(String[] args) {
         int[] nums_1 = {5, 6, 7, 8, 9};
         int[] answer_1 = {8, 5, 6, 9, 7};
