@@ -6,6 +6,7 @@ public class 곂쳐진압축해제_2 {
         String actualAnswer1 = "abbabbabbef";
         System.out.println("solution for input_1: "+actualAnswer1.equals(decodedString(input_1)));
 
+
         String input_2 = "2(ab)k3(bc)";
         String actaulAnser2 = "ababkbcbcbc";
         System.out.println("solution for input_2: "+actaulAnser2.equals(decodedString(input_2)));
