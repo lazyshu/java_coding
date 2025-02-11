@@ -22,10 +22,8 @@ public class 이동횟수_2 {
         Arrays.sort(nums);
         int left=0;
         int right = nums.length - 1;
-        int calcualte=0;
         //2,2,3,4,5
         while (left <= right) {
-            calcualte++;
             if (sum + nums[right] <= 5) {
                 sum += nums[right];
                     right--; //index 4}
