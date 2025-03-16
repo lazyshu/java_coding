@@ -1,6 +1,9 @@
 package greedy_5;
 
 import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
 
 public class 스프링쿨러_3 {
     public static void main(String[] args) {
@@ -18,7 +21,7 @@ public class 스프링쿨러_3 {
         int answer3 = 3;
 
         int n4 = 5;
-        int[] nums4 = {1, 0,0,0, 1};
+        int[] nums4 = {1, 0, 0, 0, 1};
         int answer4 = -1;
 
         solution(nums1);
@@ -27,14 +30,14 @@ public class 스프링쿨러_3 {
         solution(nums4);
 
 
-        System.out.println("actualSolution(nums1) = " + actualSolution(nums1));
-        System.out.println("actualSolution(nums2) = " + actualSolution(nums2));
-        System.out.println("actualSolution(nums3) = " + actualSolution(nums3));
-        System.out.println("actualSolution(nums4) = " + actualSolution(nums4));
+        System.out.println("actualSolution(nums1) = " + (actualSolution(nums1)==answer1));
+        System.out.println("actualSolution(nums2) = " + (actualSolution(nums2)==answer2));
+        System.out.println("actualSolution(nums3) = " + (actualSolution(nums3)==answer3));
+        System.out.println("actualSolution(nums4) = " + (actualSolution(nums4)==answer4));
 
 
     }
-//    int[] nums2 = {1, 2, 2, 0, 0}; //0,1,2,3,4
+
     private static int actualSolution(int[] nums) {
         int count=0;
         int[][] arr = new int[nums.length][2];
@@ -64,31 +67,27 @@ public class 스프링쿨러_3 {
     }
 
     private static void solution(int[] nums) {
-        int left=0, right=0;
-        int count=0;
-        while (right < nums.length-1) { //keep iterating until the right index reaches to the last index.
+        int left = 0, right = 0;
+        int count = 0;
+        while (right < nums.length - 1) { //keep iterating until the right index reaches to the last index.
             for (int i = left; i < nums.length; i++) { // i==left, starting from left.
                 if (nums[i] >= i - left) { // if current sprinkler can water on the left index.
                     if (right < nums[i] + i) { //if current index can sprinkle extend further than right index.
                         right = nums[i] + i; //we move the right index.
-                        System.out.println(right);
 
-                        if (right >= nums.length-1) {
+                        if (right >= nums.length - 1) {
                             break; //if the right index reaches or exceeds the end of array. we stop so following code won't execute
                         }
                     }
                 }
             }
-        if (left == right) {
-            count=-1;
-            break;
-        }
+            if (left == right) {
+                count = -1;
+                break;
+            }
             left = right; // The codes above determines how far we can move to right while still covering the left index.
             //update left to the farthest position we reached(right)
             count++;
-}
-        System.out.println("count = " + count);
-        System.out.println("right = " + right);
-        System.out.println("left = " + left);
+        }
     }
 }
